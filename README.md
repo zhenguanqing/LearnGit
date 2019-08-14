@@ -4,7 +4,7 @@ Git是目前最先进的分布式版本控制系统
 
 那什么是版本控制系统？
 
->如果有一个软件，不但能自动帮我记录每次文件的改动，还可以让同事协作编辑，这样就不用自己管理一堆类似的文件了，也不需要把文件传来传去。如果想查看某次改动，只需要在软件里瞄一眼就可以
+> 如果有一个软件，不但能自动帮我记录每次文件的改动，还可以让同事协作编辑，这样就不用自己管理一堆类似的文件了，也不需要把文件传来传去。如果想查看某次改动，只需要在软件里瞄一眼就可以
 
 这就是git的初衷
 
@@ -41,6 +41,7 @@ Initialized empty Git repository in /Users/zhenguanqing/learngit/.git/
 #### 对新建文件的操作
 
 将新建的某个文件添加到仓库：
+
 ```
 $ git add xxx
 ```
@@ -48,6 +49,7 @@ xxx代表添加的文件名
 
 
 将所有新建的文件添加到仓库
+
 ```
 $ git add .
 ```
@@ -74,10 +76,12 @@ $ git remote add origin git@github.com:xxx/xxx.git
 add origin后面的是GitHub上的仓库地址，可以使HTTPS协议或者git协议（需要在代码托管平台添加自己电脑的SSH Key，方法很简单）
 
 然后将本地仓库所有的内容推送到远程仓库上
+
 ```
 $ git push -u origin master
 ```
 如果出现类似下方这样的提示，表示关联成功了
+
 ```
 Enumerating objects: 73, done.
 Counting objects: 100% (73/73), done.
@@ -97,10 +101,13 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 git pull origin master
 ```
 如果报错`fatal: refusing to merge unrelated histories`
-就用
+可以使用
+
 ```
 git pull --allow-unrelated-histories origin  master
 ```
+来达到更新的目的
+
 `--allow-unrelated-histories`会允许关联两个分支的历史分支
 
 #### 从远程仓库克隆
@@ -108,11 +115,13 @@ git pull --allow-unrelated-histories origin  master
 关联远程仓库还可以先创建远程库，然后克隆到本地，这种方式更常使用，因为有可能你是从半路开始开发这个项目的，此时这个项目已经存在了，当然也可以先在代码托管平台上创建远程仓库然后克隆到本地从零开始开发
 
 此时拿到远程仓库地址后使用命令`git clone`克隆一个仓库（在任意一个文件夹目录下执行都可以，克隆成功后本地仓库就存在于这个文件夹下）
+
 ```
 $ git clone git@github.com:xxx/xxx.git
 ```
 
 例如：
+
 ```
 $ git clone git@github.com:zhenguanqing/DataStructureAndAlgorithm.git
 Cloning into 'DataStructureAndAlgorithm'...
@@ -135,5 +144,35 @@ Resolving deltas: 100% (15/15), done.
 历时记录信息中类似 `1094adb...` 的是`commit id`（版本号）
 
 如果回退到上一个版本？
+
+在Git中 `HEAD`表示当前版本，上一个版本就是`HEAD^`，上上个版本就是`HEAD^^`，往回的版本比较多的时候写成`HEAD~100`
+
+使用`git reset`命令 可以退回某一个版本
+
+退回上一个版本：
+
+```
+$ git reset --hard HEAD^
+```
+
+退回上个之后还想重新回到最新的版本怎么办？找到刚才的最后一次commit记录中的commitid，然后执行
+
+```
+$ git reset --hard 1094a
+```
+
+`1094a` 代表的是最后一个版本的 commitid （不需要写全，写出前几位就可以）
+
+如果已经找不到最后一个版本的commitid怎么办？比如重启了电脑
+
+可以使用`git relog`命令
+
+Git的版本回退速度很快，是因为Git内部有一个当前版本的HEAD指针
+
+- git log - 查看提交历史 以便确定回退到哪个版本
+- git reflog - 查看命令历史 以便确定要回到未来的哪个版本
+
+#### 工作区和暂存区
+Git相比SVN是有暂存区概念的
 
 
