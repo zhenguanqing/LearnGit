@@ -13,7 +13,6 @@
 		0058CAA1230533310004E807 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0058CAA0230533310004E807 /* Assets.xcassets */; };
 		0058CAA4230533310004E807 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0058CAA2230533310004E807 /* LaunchScreen.storyboard */; };
 		0058CAA7230533310004E807 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0058CAA6230533310004E807 /* main.m */; };
-		0058CAAF230538780004E807 /* GitModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0058CAAE230538780004E807 /* GitModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +26,6 @@
 		0058CAA3230533310004E807 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0058CAA5230533310004E807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0058CAA6230533310004E807 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0058CAAD230538780004E807 /* GitModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GitModel.h; sourceTree = "<group>"; };
-		0058CAAE230538780004E807 /* GitModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GitModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +62,6 @@
 				0058CA982305332F0004E807 /* AppDelegate.m */,
 				0058CA9A2305332F0004E807 /* ViewController.h */,
 				0058CA9B2305332F0004E807 /* ViewController.m */,
-				0058CAAD230538780004E807 /* GitModel.h */,
-				0058CAAE230538780004E807 /* GitModel.m */,
 				0058CA9D2305332F0004E807 /* Main.storyboard */,
 				0058CAA0230533310004E807 /* Assets.xcassets */,
 				0058CAA2230533310004E807 /* LaunchScreen.storyboard */,
@@ -148,7 +143,6 @@
 			files = (
 				0058CA9C2305332F0004E807 /* ViewController.m in Sources */,
 				0058CAA7230533310004E807 /* main.m in Sources */,
-				0058CAAF230538780004E807 /* GitModel.m in Sources */,
 				0058CA992305332F0004E807 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
