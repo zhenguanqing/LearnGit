@@ -405,3 +405,21 @@ bug分支只需要在本地修复bug，就没必要推送到远端了，而featu
 git rebase
 ```
 原本分叉的分支会变成一条直线（但是本地的分叉提交会被修改）
+
+#### 标签管理
+
+在发布一个版本时，我们通常会在版本库中打一个标签（tag），这样就可以确定这个版本的时刻，标签就是这个版本的快照。但本质上他是指向某个commit的指针，相对于commitid，它的可读性更好
+
+使用`git tag tag_name`就可以打一个标签。
+
+使用`git tag` 可以查看所有标签
+
+如果要给版本库以前的某个时刻打标签可以使用`git tag tag_name commitid`
+
+注意：标签不是按时间顺序列出的，而是按字母排列的，使用`git show tag_name`可以查看标签信息
+
+还可以使用`git tag -a tag_name -m'message' commitid`创建带有说明的标签，-a 用来指定标签名 -m用来添加说明
+
+删除本地标签：`git tag -d tag_name`
+推送某个标签到远端：`git push origin tag_name` 或使用`git push origin --tags`推送所有本地标签
+删除远端标签：`git push origin:refs/tags/tag_name`
