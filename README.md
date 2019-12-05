@@ -91,7 +91,7 @@ Writing objects: 100% (72/72), 690.35 KiB | 1.98 MiB/s, done.
 Total 72 (delta 12), reused 0 (delta 0)
 remote: Resolving deltas: 100% (12/12), done.
 To github.com:zhenguanqing/DataStructureAndAlgorithm.git
-   04a7d8a..81fe63e  master -> master
+04a7d8a..81fe63e  master -> master
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 ```
 
@@ -185,7 +185,6 @@ Git的版本回退速度很快，是因为Git内部有一个当前版本的HEAD�
 
 - git status 查看当时工作区的状态
 
-
 #### 管理修改
 
 每次修改，如果不使用`git add` 将修改添加到暂存区，那么`commit`的时候就不会将这部分修改提交到版本库，所以Git跟踪管理的是修改，而不是文件，这也正是它优秀的地方
@@ -238,7 +237,7 @@ Switched to branch 'dev'
 ```
 $ git branch
 * dev
-  master
+master
 ```
 当我们在`dev`上完成了某一阶段的工作后，就可以切换回`master`分支，并把`dev`上修改的内容合并进`master`分支
 
@@ -313,10 +312,10 @@ On branch master
 Your branch is up to date with 'origin/master'.
 
 Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+(use "git add <file>..." to update what will be committed)
+(use "git checkout -- <file>..." to discard changes in working directory)
 
-	modified:   test.txt
+modified:   test.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
 Dropped refs/stash@{0} (31fe0b99cb0672f72bd995c56806ce464b37491c)
@@ -336,10 +335,10 @@ On branch master
 Your branch is up to date with 'origin/master'.
 
 Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+(use "git add <file>..." to update what will be committed)
+(use "git checkout -- <file>..." to discard changes in working directory)
 
-	modified:   README.md
+modified:   README.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
@@ -356,8 +355,8 @@ Dropped stash@{0} (a18304ccf7ba4530441db39ab448d9494ad89d64)
 ```
 $ git cherry-pick 53f63c9
 [dev1 dbce2f8] fix
- Date: Fri Aug 16 11:38:40 2019 +0800
- 1 file changed, 2 insertions(+)
+Date: Fri Aug 16 11:38:40 2019 +0800
+1 file changed, 2 insertions(+)
 ```
 
 此时Git会自动给dev1做一次提交，虽然跟`53f63c9`的改动相同，但他们属于两个不同的commit
@@ -440,10 +439,10 @@ git remote add origin git@github.com:zhenguanqing/LearnGit.git
 ```
 此时这个仓库就关联了两个仓库，使用`git remote -v`查看远程仓库信息：
 ```
-gitee	git@gitee.com:zhenguanqing/LearnGit.git (fetch)
-gitee	git@gitee.com:zhenguanqing/LearnGit.git (push)
-github	git@github.com:zhenguanqing/LearnGit.git (fetch)
-github	git@github.com:zhenguanqing/LearnGit.git (push)
+gitee    git@gitee.com:zhenguanqing/LearnGit.git (fetch)
+gitee    git@gitee.com:zhenguanqing/LearnGit.git (push)
+github    git@github.com:zhenguanqing/LearnGit.git (fetch)
+github    git@github.com:zhenguanqing/LearnGit.git (push)
 ```
 此时如果需要推送改动需要指定往哪个远程仓库推送，比如
 ```
@@ -500,4 +499,5 @@ git status
 配置Git的时候 `--global`是针对当前的用户起作用，如果不加，就是只针对当前的仓库
 
 Git的配置文件放在`.git/config`文件中
+
 
